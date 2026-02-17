@@ -1,89 +1,218 @@
+/* MyQuranDiary - Web3 Glassmorphism Style */
+
 :root {
     --bg: #05070a;
     --primary: #3b82f6;
     --secondary: #10b981;
     --glass: rgba(255, 255, 255, 0.03);
     --border: rgba(255, 255, 255, 0.1);
+    --text-main: #ffffff;
+    --text-dim: #94a3b8;
 }
 
 body {
     background-color: var(--bg);
-    color: #fff;
+    color: var(--text-main);
     font-family: 'Plus Jakarta Sans', sans-serif;
     margin: 0;
     overflow-x: hidden;
+    line-height: 1.6;
 }
 
+/* Background Glow Effect (Celestia Vibe) */
 .background-glow {
     position: fixed;
     top: -10%;
     right: -10%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
     z-index: -1;
+    pointer-events: none;
 }
 
+/* Navigation Bar (Sticky & Glass) */
 .navbar {
-    padding: 20px 5%;
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    padding: 12px 5%;
+    background: rgba(10, 11, 16, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     border-bottom: 1px solid var(--border);
-    backdrop-filter: blur(10px);
 }
 
-.logo { font-weight: 800; letter-spacing: 2px; }
-.logo span { color: var(--primary); }
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
 
-.container { padding: 40px 5%; max-width: 600px; margin: auto; }
+.app-logo {
+    height: 48px;
+    width: auto;
+    filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.3));
+}
+
+.app-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.app-title {
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: var(--primary);
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+.program-name {
+    font-size: 0.65rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.status-indicator {
+    font-size: 0.75rem;
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--secondary);
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+/* Main Container */
+.container { 
+    padding: 40px 5%; 
+    max-width: 550px; 
+    margin: auto; 
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 40px;
+}
 
 .gradient-text {
-    background: linear-gradient(to right, #fff, var(--primary));
+    background: linear-gradient(to right, #ffffff, var(--primary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin: 0 0 10px 0;
 }
 
+.hero p {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+}
+
+/* Glassmorphism Form */
 .glass-form-container {
     background: var(--glass);
     border: 1px solid var(--border);
-    padding: 30px;
+    padding: 25px;
     border-radius: 24px;
     backdrop-filter: blur(20px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
-.input-group { margin-bottom: 20px; }
-label { display: block; margin-bottom: 8px; font-size: 0.85rem; color: #94a3b8; }
+.input-group { margin-bottom: 18px; }
+
+label { 
+    display: block; 
+    margin-bottom: 8px; 
+    font-size: 0.8rem; 
+    color: var(--text-dim);
+    font-weight: 600;
+}
 
 input, select {
     width: 100%;
-    padding: 12px;
-    background: rgba(255,255,255,0.05);
+    padding: 14px;
+    background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: 14px;
     color: white;
     outline: none;
     box-sizing: border-box;
+    font-family: inherit;
+    transition: all 0.3s ease;
 }
 
-.input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+input:focus, select:focus {
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.08);
+}
 
+.input-row { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 15px; 
+}
+
+/* Rating Section */
+.rating-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 15px; 
+    background: rgba(0,0,0,0.2); 
+    padding: 15px; 
+    border-radius: 18px; 
+    margin-bottom: 20px;
+}
+
+.rating-val { 
+    font-weight: 800; 
+    color: var(--secondary); 
+    display: block; 
+    text-align: center; 
+    font-size: 1.1rem;
+    margin-top: 5px;
+}
+
+/* Submit Button */
 .btn-submit {
     width: 100%;
-    padding: 15px;
-    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    padding: 16px;
+    background: linear-gradient(45deg, var(--primary), #2563eb);
     border: none;
-    border-radius: 12px;
+    border-radius: 14px;
     color: white;
     font-weight: 700;
+    font-size: 1rem;
     cursor: pointer;
     margin-top: 10px;
-    transition: 0.3s;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
 }
 
-.btn-submit:hover { transform: scale(1.02); filter: brightness(1.2); }
+.btn-submit:hover { 
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
 
-.rating-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; background: rgba(0,0,0,0.2); padding: 15px; border-radius: 15px; margin-bottom: 20px; }
-.rating-val { font-weight: bold; color: var(--secondary); display: block; text-align: center; }
+.btn-submit:active {
+    transform: translateY(0);
+}
+
+/* Footer */
+.footer-info {
+    text-align: center;
+    padding: 30px;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+}
+
+/* Range Input Styling */
+input[type=range] {
+    accent-color: var(--secondary);
+    height: 6px;
+}
