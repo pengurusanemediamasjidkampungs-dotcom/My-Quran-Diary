@@ -1,7 +1,100 @@
 [
-  { "id": "L01", "nama": "MUHAMMAD HAZIM BIN MOHD KHAIRI", "umur": 16, "tahun": 2010 },
-  { "id": "L02", "nama": "AHMAD ZAKWAN BIN ARIS", "umur": 15, "tahun": 2011 },
-  { "id": "L03", "nama": "MUHAMMAD ALIF BIN ZULKIFLI", "umur": 14, "tahun": 2012 },
-  { "id": "L04", "nama": "MUHAMMAD IZZAT BIN RAMLI", "umur": 13, "tahun": 2013 },
-  { "id": "L05", "nama": "ABDULLAH BIN ABDUL RAHMAN", "umur": 12, "tahun": 2014 }
+  {
+    "id": "L01",
+    "nama": "MUHAMMAD ZAHIN BIN MOHD IRWAN",
+    "ic": "110921100549",
+    "umur": 15,
+    "tahun": 2011
+  },
+  {
+    "id": "L02",
+    "nama": "MUHAMMAD ZAKWAN BIN MUHAMMAD FADHIL",
+    "ic": "130913102091",
+    "umur": 13,
+    "tahun": 2013
+  },
+  {
+    "id": "L03",
+    "nama": "MUHAMMAD RIZQIE NAUFAL MOHD NAZLI",
+    "ic": "140207102325",
+    "umur": 12,
+    "tahun": 2014
+  },
+  {
+    "id": "L04",
+    "nama": "MUHAMMAD AIDAN HARITH BIN ABDUL HAQQ",
+    "ic": "140107102141",
+    "umur": 12,
+    "tahun": 2014
+  },
+  {
+    "id": "L05",
+    "nama": "MUHAMMAD NUR IMAN BIN MOHAMMAD NORFAIZAL",
+    "ic": "140217102003",
+    "umur": 12,
+    "tahun": 2014
+  },
+  {
+    "id": "L06",
+    "nama": "AEL AMEEN BIN SHAHRIN",
+    "ic": "140322100851",
+    "umur": 12,
+    "tahun": 2014
+  },
+  {
+    "id": "L07",
+    "nama": "MUHAMMAD FIRAS HAZIM BIN AZHAR",
+    "ic": "150109160133",
+    "umur": 11,
+    "tahun": 2015
+  },
+  {
+    "id": "L08",
+    "nama": "MUHAMMAD HADIF AKHYAR BIN MUHAMMAD AZFAR",
+    "ic": "150805080719",
+    "umur": 11,
+    "tahun": 2015
+  },
+  {
+    "id": "L09",
+    "nama": "DANIAL AR RAYYAN BIN AHMAD RIDUAN",
+    "ic": "151125101015",
+    "umur": 11,
+    "tahun": 2015
+  },
+  {
+    "id": "L10",
+    "nama": "MUHAMMAD NUR AMIN BIN MOHAMMAD NORFAIZAL",
+    "ic": "160215100723",
+    "umur": 10,
+    "tahun": 2016
+  },
+  {
+    "id": "L11",
+    "nama": "MUHAMMAD AISY BIN SHAMSURI",
+    "ic": "170312102463",
+    "umur": 9,
+    "tahun": 2017
+  },
+  {
+    "id": "L12",
+    "nama": "AHMAD AMSYAR BIN AHMAD AHNAF",
+    "ic": "170415101543",
+    "umur": 9,
+    "tahun": 2017
+  },
+  {
+    "id": "L13",
+    "nama": "UMAR FIRDAUS BIN MOHAMAD KHAIRIL",
+    "ic": "170507011991",
+    "umur": 9,
+    "tahun": 2017
+  },
+  {
+    "id": "L14",
+    "nama": "DANIAL AZ ZARIF BIN AHMAD RIDUAN",
+    "ic": "180407080569",
+    "umur": 8,
+    "tahun": 2018
+  }
 ]
