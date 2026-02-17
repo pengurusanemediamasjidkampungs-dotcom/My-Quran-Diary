@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My-Quran-Diary | Daurah 2026</title>
+    <title>MyQuranDiary | Daurah Remaja Quranic 2026</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
@@ -12,37 +12,56 @@
     <div class="background-glow"></div>
 
     <nav class="navbar">
-        <div class="logo">MY-Q<span>DIARY</span></div>
-        <div class="nav-date" id="currentDate">1 Ramadan 1447H</div>
+        <div class="nav-left">
+            <img src="logo-masjid.png" alt="Logo Masjid" class="app-logo">
+            <div class="app-info">
+                <span class="app-title">MyQuranDiary</span>
+                <span class="program-name">Daurah Remaja Quranic 2026</span>
+            </div>
+        </div>
+        <div class="nav-right">
+            <div class="status-indicator">Online</div>
+        </div>
     </nav>
 
     <main class="container">
         <header class="hero">
             <h1 class="gradient-text">Rekod Hafazan</h1>
-            <p>Sesi Mentashih Daurah Remaja 2026</p>
+            <p>Sistem Pemantauan Rohani & Hafazan 1447H</p>
         </header>
 
         <section class="glass-form-container">
             <form id="hafazanForm">
+                
                 <div class="input-group">
-                    <label>Nama Peserta</label>
-                    <input type="text" id="nama" placeholder="Cari nama peserta..." required>
-                </div>
-
-                <div class="input-group">
-                    <label>Peringkat Hafazan</label>
-                    <select id="tahap" onchange="updateSyllabus()">
-                        <option value="1-2">Tahap 1-2 (Asas)</option>
-                        <option value="3-5">Tahap 3-5 (Intensif)</option>
-                        <option value="6">Tahap 6 (Surah Pilihan)</option>
+                    <label>Jantina Peserta</label>
+                    <select id="jantina" onchange="muatTurunPeserta()" required>
+                        <option value="">-- Pilih Jantina --</option>
+                        <option value="lelaki">Lelaki</option>
+                        <option value="perempuan">Perempuan</option>
                     </select>
                 </div>
 
                 <div class="input-group">
-                    <label>Surah</label>
-                    <input type="text" id="surah" list="surahList" placeholder="Pilih Surah" required>
-                    <datalist id="surahList">
-                        </datalist>
+                    <label>Nama Peserta</label>
+                    <input type="text" id="nama" list="pesertaList" placeholder="Taip atau cari nama..." required>
+                    <datalist id="pesertaList"></datalist>
+                </div>
+
+                <div class="input-row">
+                    <div class="input-group">
+                        <label>Peringkat Hafazan</label>
+                        <select id="tahap" onchange="updateSyllabus()">
+                            <option value="1-2">Tahap 1-2 (Asas)</option>
+                            <option value="3-5">Tahap 3-5 (Intensif)</option>
+                            <option value="6">Tahap 6 (Surah Pilihan)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Surah</label>
+                        <input type="text" id="surah" list="surahList" placeholder="Pilih Surah" required>
+                        <datalist id="surahList"></datalist>
+                    </div>
                 </div>
 
                 <div class="input-row">
@@ -50,7 +69,7 @@
                         <label>Mod Rekod</label>
                         <select id="modRekod" onchange="toggleAyatField()">
                             <option value="penuh">Satu Surah Penuh</option>
-                            <option value="julat">Julat Ayat (Contoh: 1-15)</option>
+                            <option value="julat">Julat Ayat (cth: 1-15)</option>
                         </select>
                     </div>
                     <div class="input-group" id="ayatField" style="display:none;">
@@ -73,7 +92,7 @@
                 </div>
 
                 <div class="input-group">
-                    <label>Pentashih / Guru</label>
+                    <label>Pentashih / Guru Semakan</label>
                     <input type="text" id="guru" placeholder="Nama Guru Penilai" required>
                 </div>
 
@@ -81,6 +100,10 @@
             </form>
         </section>
     </main>
+
+    <footer class="footer-info">
+        <p>&copy; 2026 Masjid Kampung Sungai Lang Baru</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
