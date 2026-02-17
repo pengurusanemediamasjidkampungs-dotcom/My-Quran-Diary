@@ -33,28 +33,33 @@
         <section class="glass-form-container">
             <form id="hafazanForm">
                 
-                <div class="input-group">
-                    <label>Jantina Peserta</label>
-                    <select id="jantina" onchange="muatTurunPeserta()" required>
-                        <option value="">-- Pilih Jantina --</option>
-                        <option value="lelaki">Lelaki</option>
-                        <option value="perempuan">Perempuan</option>
-                    </select>
-                </div>
-
-                <div class="input-group">
-                    <label>Nama Peserta</label>
-                    <input type="text" id="nama" list="pesertaList" placeholder="Taip atau cari nama peserta..." required>
-                    <datalist id="pesertaList"></datalist>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label>Jantina Peserta</label>
+                        <select id="jantina" onchange="muatTurunPeserta()" required>
+                            <option value="">-- Pilih --</option>
+                            <option value="lelaki">Lelaki</option>
+                            <option value="perempuan">Perempuan</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Nama Peserta</label>
+                        <input type="text" id="nama" list="pesertaList" placeholder="Cari nama..." required>
+                        <datalist id="pesertaList"></datalist>
+                    </div>
                 </div>
 
                 <div class="input-row">
                     <div class="input-group">
                         <label>Peringkat Hafazan</label>
-                        <select id="tahap" onchange="updateSyllabus()">
-                            <option value="1-2">Tahap 1-2 (Asas)</option>
-                            <option value="3-5">Tahap 3-5 (Intensif)</option>
-                            <option value="6">Tahap 6 (Surah Pilihan)</option>
+                        <select id="tahap" onchange="updateSyllabus()" required>
+                            <option value="">-- Pilih Tahap --</option>
+                            <option value="Tahap 1">Tahap 1</option>
+                            <option value="Tahap 2">Tahap 2</option>
+                            <option value="Tahap 3">Tahap 3</option>
+                            <option value="Tahap 4">Tahap 4</option>
+                            <option value="Tahap 5">Tahap 5</option>
+                            <option value="Surah Pilihan">Surah Pilihan</option>
                         </select>
                     </div>
                     <div class="input-group">
@@ -73,7 +78,7 @@
                         </select>
                     </div>
                     <div class="input-group" id="ayatField" style="display:none;">
-                        <label>No. Ayat</label>
+                        <label>No. Ayat / Baris</label>
                         <input type="text" id="julatAyat" placeholder="cth: 1-10">
                     </div>
                 </div>
@@ -104,7 +109,7 @@
 
     <footer class="footer-info">
         <p>&copy; 2026 Masjid Kampung Sungai Lang Baru</p>
-        <p style="font-size: 0.6rem; margin-top: 5px; opacity: 0.5;">Powered by MyQuranDiary</p>
+        <p style="font-size: 0.6rem; margin-top: 5px; opacity: 0.5;">Sistem MyQuranDiary V2.0</p>
     </footer>
 
     <script src="script.js"></script>
