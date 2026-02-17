@@ -1,7 +1,11 @@
 /**
  * script.js - MyQuranDiary 2026
  * Gabungan logik Silibus (JSON), Data Peserta (JSON), dan Pentashih (JSON)
+ * Integrasi Google Apps Script untuk simpanan data ke Google Sheets
  */
+
+// URL Web App Google Apps Script anda
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbylIk3MLzkftf31BMnQHO5rtK9ImcaWYcpom12k84ircZEY44zk4NA11-X5z4rVxfNcdg/exec";
 
 // Global variable untuk menyimpan data silibus yang dimuatkan dari JSON
 let dataSilibus = {};
@@ -12,7 +16,6 @@ async function muatTurunSilibus() {
         const response = await fetch('silibus.json');
         dataSilibus = await response.json();
         console.log("Silibus berjaya dimuatkan.");
-        // Tiada initial call updateSyllabus di sini supaya list tidak kosong secara pelik
     } catch (error) {
         console.error("Gagal memuat fail silibus.json:", error);
     }
@@ -74,7 +77,6 @@ function updateSyllabus() {
     if (!list) return;
     list.innerHTML = "";
     
-    // Semak jika tahap wujud dalam dataSilibus yang dimuatkan
     if(dataSilibus[tahap]) {
         dataSilibus[tahap].forEach(surah => {
             let option = document.createElement('option');
@@ -108,12 +110,18 @@ if(tajwidInput) {
     }
 }
 
-// 7. Form Submit (Integrasi Simulasi)
+// 7. Form Submit - Integrasi Google Apps Script
 const hafazanForm = document.getElementById('hafazanForm');
 if (hafazanForm) {
     hafazanForm.onsubmit = function(e) {
         e.preventDefault();
         
+        // Tunjukkan status loading pada butang
+        const btn = e.target.querySelector('button');
+        const originalText = btn.innerText;
+        btn.innerText = "Menghantar... ⏳";
+        btn.disabled = true;
+
         const formData = {
             tarikh: new Date().toLocaleString('ms-MY'),
             nama: document.getElementById('nama').value,
@@ -127,10 +135,29 @@ if (hafazanForm) {
             guru: document.getElementById('guru').value
         };
 
-        console.log("Data sedia untuk dihantar:", formData);
-        alert(`Berjaya! Rekod hafazan ${formData.nama} telah direkodkan oleh Ustaz/Ustazah ${formData.guru}.`);
-        
-        // Sedia untuk fetch(GOOGLE_SCRIPT_URL, ...)
+        // Menghantar data ke Google Apps Script
+        fetch(SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors', // Penting untuk mengelakkan ralat CORS pada GAS
+            cache: 'no-cache',
+            body: JSON.stringify(formData)
+        })
+        .then(() => {
+            alert(`Alhamdulillah! Rekod hafazan ${formData.nama} telah berjaya disimpan.`);
+            btn.innerText = originalText;
+            btn.disabled = false;
+            
+            // Optional: Reset form selepas berjaya
+            // hafazanForm.reset();
+            // document.getElementById('valFasohah').innerText = "5";
+            // document.getElementById('valTajwid').innerText = "5";
+        })
+        .catch(error => {
+            console.error('Ralat:', error);
+            alert("Gagal menyimpan rekod. Sila semak sambungan internet atau hubungi admin.");
+            btn.innerText = originalText;
+            btn.disabled = false;
+        });
     };
 }
 
