@@ -1,7 +1,37 @@
 [
-  { "id": "P01", "nama": "NUR AISYAH BINTI MOHD NAZRI", "umur": 16, "tahun": 2010 },
-  { "id": "P02", "nama": "SITI NURHALIZA BINTI JAFRI", "umur": 15, "tahun": 2011 },
-  { "id": "P03", "nama": "NURUL IMAN BINTI AZMAN", "umur": 14, "tahun": 2012 },
-  { "id": "P04", "nama": "FARAH WAHIDA BINTI KASIM", "umur": 13, "tahun": 2013 },
-  { "id": "P05", "nama": "HIDAYAH BINTI BAKRI", "umur": 12, "tahun": 2014 }
+  {
+    "id": "P01",
+    "nama": "AUNI NASUHA BINTI MOHAMAD RAFEE",
+    "ic": "120717102386",
+    "umur": 14,
+    "tahun": 2012
+  },
+  {
+    "id": "P02",
+    "nama": "NUR SYAURAH BINTI ESRIFADLI",
+    "ic": "130530100478",
+    "umur": 13,
+    "tahun": 2013
+  },
+  {
+    "id": "P03",
+    "nama": "NUR DHIA HUSNA BINTI HAMIZAN",
+    "ic": "131030102332",
+    "umur": 13,
+    "tahun": 2013
+  },
+  {
+    "id": "P04",
+    "nama": "NUR AESHA HUMAIRA BINTI MUHAMMAD AZFAR",
+    "ic": "170122011544",
+    "umur": 9,
+    "tahun": 2017
+  },
+  {
+    "id": "P05",
+    "nama": "ADAWIYAH HUMAIRA BINTI SHAHRIN",
+    "ic": "170819100854",
+    "umur": 9,
+    "tahun": 2017
+  }
 ]
